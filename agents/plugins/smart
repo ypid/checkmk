@@ -172,7 +172,7 @@ main() {
                     DNAME="${VEND}_${MODEL}_${SN}"
                 fi
             else
-                CMD="smartctl -d ata -v 9,raw48 -A $D; smartctl -d sat -v 9,raw48 -A $D"
+                CMD="smartctl -d ata --nocheck=standby,0 -v 9,raw48 -A $D; smartctl -d sat --nocheck=standby,0 -v 9,raw48 -A $D"
             fi
 
             if [ "$VEND" = "NVME" ]; then
